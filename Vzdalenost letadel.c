@@ -95,6 +95,6 @@ int main() {
 			}
 		}
 	}
-
+     free(pole);
 	return 0; // vrací operačnímu systému kód 0, což znamená, že program skončil bez chyby. Když bys vrátil něco jiného, hlásil by chybu.
 }
