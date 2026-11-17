@@ -3,57 +3,57 @@
 
 int main(void) {
 
-    // Deklarace promìnnıch pro naèítání èísel, minimum a maximum
+    // Deklarace promÄ›nnÃ½ch pro naÄÃ­tÃ¡nÃ­ ÄÃ­sel, minimum a maximum
     int cislo, max, min;
 
-    // Promìnné pro prùmìr a procentuální statistiky
+    // PromÄ›nnÃ© pro prÅ¯mÄ›r a procentuÃ¡lnÃ­ statistiky
     float prumer, procento_kladne, procento_zaporne;
     float procento_sude, procento_liche;
 
-    // Poèítadla jednotlivıch kategorií èísel
+    // PoÄÃ­tadla jednotlivÃ½ch kategoriÃ­ ÄÃ­sel
     int pocet = 0;
     int kladne = 0;
     int zaporne = 0;
     int sude = 0;
     int liche = 0;
 
-    // Souèet všech naètenıch èísel pro vıpoèet prùmìru
+    // SouÄet vÅ¡ech naÄtenÃ½ch ÄÃ­sel pro vÃ½poÄet prÅ¯mÄ›ru
     int suma = 0;
 
 
-    // Cyklus naèítá celá èísla, dokud je scanf úspìšnì naèítá
-    // scanf vrací 1 pøi úspìšném naètení jednoho celého èísla
+    // Cyklus naÄÃ­tÃ¡ celÃ¡ ÄÃ­sla, dokud je scanf ÃºspÄ›Å¡nÄ› naÄÃ­tÃ¡
+    // scanf vracÃ­ 1 pÅ™i ÃºspÄ›Å¡nÃ©m naÄtenÃ­ jednoho celÃ©ho ÄÃ­sla
     while (scanf("%d", &cislo) == 1) {
 
-        // Kontrola, zda èíslo leí v povoleném intervalu
-        // Operátor || znamená logické NEBO
+        // Kontrola, zda ÄÃ­slo leÅ¾Ã­ v povolenÃ©m intervalu
+        // OperÃ¡tor || znamenÃ¡ logickÃ© NEBO
         if (cislo < -10000 || cislo > 10000) {
             printf("\nError: Vstup je mimo interval!\n");
-            return 100; // Ukonèení programu s chybovım kódem 100
+            return 100; // UkonÄenÃ­ programu s chybovÃ½m kÃ³dem 100
         }
 
-        // Hledání maximální hodnoty
-        // První èíslo nastavíme jako poèáteèní maximum
+        // HledÃ¡nÃ­ maximÃ¡lnÃ­ hodnoty
+        // PrvnÃ­ ÄÃ­slo nastavÃ­me jako poÄÃ¡teÄnÃ­ maximum
         if (pocet == 0) {
             max = cislo;
         }
-        // Pokud je další èíslo vìtší, aktualizujeme maximum
+        // Pokud je dalÅ¡Ã­ ÄÃ­slo vÄ›tÅ¡Ã­, aktualizujeme maximum
         else if (cislo > max) {
             max = cislo;
         }
 
-        // Hledání minimální hodnoty
-        // První èíslo nastavíme jako poèáteèní minimum
+        // HledÃ¡nÃ­ minimÃ¡lnÃ­ hodnoty
+        // PrvnÃ­ ÄÃ­slo nastavÃ­me jako poÄÃ¡teÄnÃ­ minimum
         if (pocet == 0) {
             min = cislo;
         }
-        // Pokud je další èíslo menší, aktualizujeme minimum
+        // Pokud je dalÅ¡Ã­ ÄÃ­slo menÅ¡Ã­, aktualizujeme minimum
         else if (cislo < min) {
             min = cislo;
         }
 
-        // Vıpis èísel oddìlenıch èárkou
-        // První èíslo vypíšeme bez èárky
+        // VÃ½pis ÄÃ­sel oddÄ›lenÃ½ch ÄÃ¡rkou
+        // PrvnÃ­ ÄÃ­slo vypÃ­Å¡eme bez ÄÃ¡rky
         if (pocet == 0) {
             printf("%d", cislo);
         }
@@ -61,49 +61,49 @@ int main(void) {
             printf(", %d", cislo);
         }
 
-        // Zvıšení celkového poètu naètenıch èísel
+        // ZvÃ½Å¡enÃ­ celkovÃ©ho poÄtu naÄtenÃ½ch ÄÃ­sel
         pocet++;
 
-        // Kontrola, zda je èíslo kladné
-        // Nula není kladná ani záporná
+        // Kontrola, zda je ÄÃ­slo kladnÃ©
+        // Nula nenÃ­ kladnÃ¡ ani zÃ¡pornÃ¡
         if (cislo > 0) {
             kladne++;
         }
 
-        // Kontrola, zda je èíslo záporné
+        // Kontrola, zda je ÄÃ­slo zÃ¡pornÃ©
         if (cislo < 0) {
             zaporne++;
         }
 
-        // Zjištìní parity èísla pomocí zbytku po dìlení
-        // Pokud zbytek po dìlení dvìma není 0, èíslo je liché
+        // ZjiÅ¡tÄ›nÃ­ parity ÄÃ­sla pomocÃ­ zbytku po dÄ›lenÃ­
+        // Pokud zbytek po dÄ›lenÃ­ dvÄ›ma nenÃ­ 0, ÄÃ­slo je lichÃ©
         if (cislo % 2 != 0) {
             liche++;
         }
         else {
-            sude++; // Nula se také poèítá mezi sudá èísla
+            sude++; // Nula se takÃ© poÄÃ­tÃ¡ mezi sudÃ¡ ÄÃ­sla
         }
 
-        // Pøiètení aktuálního èísla k celkovému souètu
+        // PÅ™iÄtenÃ­ aktuÃ¡lnÃ­ho ÄÃ­sla k celkovÃ©mu souÄtu
         suma += cislo;
     }
-    // Kontrola, zda bylo naèteno alespoò jedno èíslo
+    // Kontrola, zda bylo naÄteno alespoÅˆ jedno ÄÃ­slo
     if (pocet == 0) {
         return 0;
     }
-    // Vıpoèet procentuálních podílù jednotlivıch kategorií
-    // Pøetypování na float zabrání celoèíselnému dìlení
+    // VÃ½poÄet procentuÃ¡lnÃ­ch podÃ­lÅ¯ jednotlivÃ½ch kategoriÃ­
+    // PÅ™etypovÃ¡nÃ­ na float zabrÃ¡nÃ­ celoÄÃ­selnÃ©mu dÄ›lenÃ­
     procento_kladne = (kladne / (float)pocet) * 100;
     procento_zaporne = (zaporne / (float)pocet) * 100;
     procento_sude = (sude / (float)pocet) * 100;
     procento_liche = (liche / (float)pocet) * 100;
 
-    // Aritmetickı prùmìr = souèet èísel / poèet èísel
+    // AritmetickÃ½ prÅ¯mÄ›r = souÄet ÄÃ­sel / poÄet ÄÃ­sel
     prumer = suma / (float)pocet;
 
 
-    // Vıpis vypoèítanıch statistik
-    // %.2f vypisuje desetinné èíslo na dvì desetinná místa
+    // VÃ½pis vypoÄÃ­tanÃ½ch statistik
+    // %.2f vypisuje desetinnÃ© ÄÃ­slo na dvÄ› desetinnÃ¡ mÃ­sta
 
     printf("\nPocet cisel: %d\n", pocet);
     printf("Pocet kladnych: %d\n", kladne);
@@ -122,6 +122,6 @@ int main(void) {
     printf("Maximum: %d\n", max);
     printf("Minimum: %d\n", min);
 
-    // Úspìšné ukonèení programu
+    // ÃšspÄ›Å¡nÃ© ukonÄenÃ­ programu
     return 0;
 }
